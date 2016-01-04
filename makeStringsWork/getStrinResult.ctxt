@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ doStringOutput()
+comment1.params=
+comment1.target=void\ doFirstStringOutput()
+comment2.params=
+comment2.target=void\ doFirstSubStringOutput()
+comment3.params=s
+comment3.target=java.lang.String\ reverse(java.lang.String)
+comment4.params=
+comment4.target=void\ runString()
+numComments=5
