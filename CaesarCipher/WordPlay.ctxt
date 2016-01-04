@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=ch
+comment0.target=boolean\ isVowel(char)
+comment1.params=
+comment1.target=void\ replaceVowels()
+comment2.params=ch
+comment2.target=boolean\ isOdd(char)
+comment3.params=ch
+comment3.target=boolean\ isEven(char)
+comment4.params=
+comment4.target=void\ emphasize()
+comment5.params=
+comment5.target=void\ testArea()
+numComments=6
