@@ -1,10 +1,11 @@
 import edu.duke.*;
+//import java.util.*;
 
 public class CaesarCipher {
     
     public String encrypt(String input, int key) {
         //Make a StringBuilder with message (encrypted)
-        StringBuilder encrypted = new StringBuilder(input);
+        StringBuilder encrypted = new StringBuilder(input);        
         //Write down the alphabet
         String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         //Compute the shifted alphabet
@@ -33,9 +34,31 @@ public class CaesarCipher {
     public void testCaesar() {
         int key = 15;        
         FileResource fr = new FileResource();
-        String message = fr.asString();
+        String messageInput = fr.asString();
+        
+       //makes the message upper case
+        String message = messageInput.toUpperCase();
+        
+        //make the input String all in capitials
+        System.out.println("This is the message: " + messageInput);
+        System.out.println("This is the New message: " + message);        
+        
         String encrypted = encrypt(message, key);
         System.out.println(encrypted);
+        
+        //make the string a lower case again if not originally lower case
+        //use a for loop or compare the two char
+        for(int k=0; k < messageInput.length(); k++){
+            //check to see if the messageInput case is equal case to the message output
+            //if(messageInput){
+                
+            //}
+              
+        }
+        
+        //need to accomodate for the char not being the same
+        //use the isUpperCase(char ch) method
+        
         String decrypted = encrypt(encrypted, 26-key);
         System.out.println(decrypted);
     }
