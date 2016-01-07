@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.params=input\ key
+comment0.target=java.lang.String\ encrypt(java.lang.String,\ int)
+comment1.params=
+comment1.target=void\ testCaesar()
+comment2.params=
+comment2.target=void\ encryptTwoKeys()
+comment3.params=input\ key
+comment3.target=char\ encryptWithTwokeys(char,\ int)
+comment4.params=
+comment4.target=void\ eyeballDecrypt()
+comment5.params=
+comment5.target=void\ testdecrypt()
+comment6.params=s
+comment6.target=void\ textFingerPrint(java.lang.String)
+numComments=7
