@@ -30,40 +30,61 @@ public class CaesarCipher {
         return encrypted.toString();
     }
     
-    
     public void testCaesar() {
-        int key = 15;        
+        int key = 17;        
         FileResource fr = new FileResource();
         String messageInput = fr.asString();
-        
-       //makes the message upper case
+        //makes the message upper case
         String message = messageInput.toUpperCase();
-        
         //make the input String all in capitials
-        System.out.println("This is the message: " + messageInput);
-        System.out.println("This is the New message: " + message);        
-        
+        System.out.println("This is the messageInput: " + messageInput);
+        System.out.println("This is the message in capials: " + message);        
+        //call the encrypt method
         String encrypted = encrypt(message, key);
-        System.out.println(encrypted);
+        //show the new encrypted string#
+        System.out.println("This is the encrypted string: " + encrypted);
+        //Make the nee encrypted message all in lower case
+        String eToLowCase = encrypted.toLowerCase();
+        String finalString = "";
+        System.out.println("This is the encrypted method all in lower case: " + eToLowCase);
         
         //make the string a lower case again if not originally lower case
         //use a for loop or compare the two char
-        for(int k=0; k < messageInput.length(); k++){
-            //check to see if the messageInput case is equal case to the message output
-            //if(messageInput){
-                
-                //if messageInput.isUpperCase([k]) == true then do nothing  
-                //else make encrypted.toLowerCase([k])
-                //then return the new encrypted string
-                
-            //}
-              
-        }
-        
         //need to accomodate for the char not being the same
         //use the Character.isUpperCase(char ch) method
+        for(int k=0; k < messageInput.length(); k++){
+            //Loop through and see if the char is a capital
+            System.out.println(Character.isUpperCase(messageInput.charAt(k)));
+            //check to see if the messageInput case is equal case to the message output
+            if(Character.isUpperCase(messageInput.charAt(k)) == true ){
+                //set the caracter in the new encrypted string to uppercase 
+                //eToLowCase = eToLowCase.substring(k).toUpperCase();
+                
+                //Character.toUpperCase(eToLowCase.charAt(k));
+                
+                //// eToLowCase = Character.toUpperCase(eToLowCase.charAt(k)) + eToLowCase.substring(1); 
+                System.out.println( ">> " + Character.toUpperCase(eToLowCase.charAt(k)) );
+                System.out.println( ">> " + eToLowCase.substring(1) ); 
+                finalString = finalString + eToLowCase.substring(k,k+1).toUpperCase();
+                
+                //char first = Character.toUpperCase(eToLowCase.charAt(k));
+                
+            }    else {
+                finalString = finalString + eToLowCase.substring(k,k+1);
+            }
+            
+        }
         
-        String decrypted = encrypt(encrypted, 26-key);
+        System.out.println( "finalString = " + finalString );
+        
+        //original message input
+        System.out.println("The messageInput is: " + messageInput);
+        
+        //System.out.println(Character.isUpperCase('c'));
+        System.out.println("The new encrypted message output is: " + eToLowCase);
+
+        System.out.println("The original encrypted message: " + encrypted);    //old original string
+        String decrypted = encrypt(finalString, 26-key);      //encrypted should be replaced with finalString
         System.out.println(decrypted);
     }
     

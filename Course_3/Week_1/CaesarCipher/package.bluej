@@ -1,9 +1,9 @@
 #BlueJ package file
 objectbench.height=76
-objectbench.width=381
+objectbench.width=387
 package.editor.height=161
-package.editor.width=283
-package.editor.x=1022
+package.editor.width=289
+package.editor.x=1016
 package.editor.y=707
 package.numDependencies=0
 package.numTargets=1
@@ -11,8 +11,8 @@ package.showExtends=true
 package.showUses=true
 project.charset=UTF-8
 target1.editor.height=706
-target1.editor.width=905
-target1.editor.x=1015
+target1.editor.width=904
+target1.editor.x=1016
 target1.editor.y=1
 target1.height=50
 target1.name=CaesarCipher
