@@ -52,12 +52,16 @@ public class CaesarCipher {
             //check to see if the messageInput case is equal case to the message output
             //if(messageInput){
                 
+                //if messageInput.isUpperCase([k]) == true then do nothing  
+                //else make encrypted.toLowerCase([k])
+                //then return the new encrypted string
+                
             //}
               
         }
         
         //need to accomodate for the char not being the same
-        //use the isUpperCase(char ch) method
+        //use the Character.isUpperCase(char ch) method
         
         String decrypted = encrypt(encrypted, 26-key);
         System.out.println(decrypted);
