@@ -31,7 +31,7 @@ public class CaesarCipher {
     }
     
     public void testCaesar() {
-        int key = 17;        
+        int key = 15;        
         FileResource fr = new FileResource();
         String messageInput = fr.asString();
         //makes the message upper case
@@ -88,8 +88,95 @@ public class CaesarCipher {
         System.out.println(decrypted);
     }
     
-    public void encryptTwoKeys(String input, int key1, int key2) {
-        //part 2 of the Caesar Cipher is to encrypte with two Keys
+    public void encryptTwoKeys() {
+        //part 2 of the Caesar Cipher is to encrypte a message with two Keys
+        //int key = 15          //Pi cddc qt xc iwt rdcutgtcrt gddb lxiw ndjg wpi dc udg p hjgegxht epgin. NTAA ADJS!
+        int key1 = 8;           //two keys = k1-8 & k2-21
+        int key2 = 21;          //Io iwjv jz dv bcm kjvammmikz mwju edbc twpz pvb wi awm v ncmxmqnm xvzog. TMGT TJCY!
+        
+        FileResource fr = new FileResource();
+        String message = fr.asString();
+        
+        //String message = "First Legion!^&()";
+        char encrypted = 'x';
+        String finalString = "";
+        // use and if 2%= 0 the use key1 (set this to the key) and if 
+        
+        for (int i = 0; i < message.length(); i++){
+
+            char input = message.charAt(i);
+            //System.out.println( " >> " + input);
+            
+            if(i%2 == 0){
+                int key = key1;
+                encrypted = encryptWithTwokeys(input, key);
+                //System.out.println(" >> " + key);
+                //System.out.println(" >> " + input);
+            }
+            else if(i%2 != 0){
+                int key = key2;
+                encrypted = encryptWithTwokeys(input, key);
+                //System.out.println(" >> " + key);
+                //System.out.println(" >> " + input);
+            }
+            
+            //System.out.println(" >>>> " + encrypted);
+            
+            //REBUILD THE STRING HERE       
+            finalString = finalString + encrypted;
+            
+            //System.out.println(" > " + finalString);
+            
+        }
+        
+        
+        System.out.println("The original message is: " + message);
+        
+        System.out.println("The encrypted message is: " + finalString);
+        
+        //String decrypted = encrypt(finalString, 26-key);
+        //System.out.println(decrypted);
     }
+    
+    
+    // rebuild to only decrypt one char at a time
+    public char encryptWithTwokeys(char input, int key) {      
+        //Preserve the case of the original char input
+        char originalIO = input;
+        //Make the input a capital
+        input = Character.toUpperCase(input);
+        //Write down the alphabet
+        String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        //Compute the shifted alphabet
+        String shiftedAlphabet = alphabet.substring(key)+
+        alphabet.substring(0,key);
+
+            //take the char from the message and call it currChar
+            char currChar = input;
+            //Find the index of currChar in the alphabet (call it idx)
+            int idx = alphabet.indexOf(currChar);
+            //If currChar is in the alphabet
+            
+            char encrypted = 'a';
+            
+            if(idx != -1){
+                //Get the idxth character of shiftedAlphabet (newChar)
+                char newChar = shiftedAlphabet.charAt(idx);
+                //Replace the char of encrypted with newChar
+                encrypted = newChar;
+            }else{
+                encrypted = input;
+            }
+            
+            //Check the case of the input char to see if it is an upper or lowwer case char
+            if(Character.isUpperCase(originalIO) != true ){
+                //if tie original input char is lower case then change the encrypted to lower case
+                encrypted = Character.toLowerCase(encrypted);
+            }
+            
+        //return encrypted char
+        return encrypted;
+    }
+    
 }
 
