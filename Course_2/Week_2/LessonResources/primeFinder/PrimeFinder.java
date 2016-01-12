@@ -28,7 +28,7 @@ public class PrimeFinder {
 		RangeResource rr = new RangeResource(2, 200);
 		for (int value : rr.sequence()){
 			if (isPrime(value)) {
-				System.out.println(value + "\t is prime");
+				System.out.println(value + "\t"+"is prime");
 			}
 		}
 	}

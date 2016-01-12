@@ -1,37 +1,21 @@
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-
-//URLResource name = new.URLResource();
+import edu.duke.*;
 
 public class readUrlFile {
     
-        public static void main(String[] args) {
-        try {
-            File file = new File("indexOfHTMLpage.txt");
-            FileReader fileReader = new FileReader(file);
-            BufferedReader bufferedReader = new BufferedReader(fileReader);
-            StringBuffer stringBuffer = new StringBuffer();
-            String line;
-            while ((line = bufferedReader.readLine()) != null) {
-                stringBuffer.append(line);
-                stringBuffer.append("\n");
-            }
-            fileReader.close();
-            System.out.println("Contents of file:");
-            System.out.println(stringBuffer.toString());
-        } catch (IOException e) {
-            e.printStackTrace();
+    public void readURL(){
+        System.setProperty("http.proxyHost", "webproxy.metoffice.gov.uk" );
+        System.setProperty("http.proxyPort", "8080");
+        URLResource ur = new URLResource("http://www.dukelearntoprogram.com/course2/data/manylinks.html");
+        
+        for (String s : ur.lines()) {
+             // print or process s
+             System.out.println(s);
         }
     }
     
-    
     public void testing(){
-        //
-        
-        
+
     }
 
 }
